@@ -1,0 +1,19 @@
+Name:马同庆
+ID：201700130075
+
+The Introduction of the prime.cpp
+
+In my algorithm, compared with Eratosthenes prime number filtering algorithm:           
+In this Scanning process, the following points should be made clear:            
+	1. The prime number smaller than the given SIZE not be greater than the 根号SIZE;            
+	2. A multiple greater than 2 of a number greater than 2 must be a composite number;            
+Therefore, we need to start from the minimum prime number 2, find the multiple of 2 to remove it, find all prime numbers in turn to remove their multiple. Of course, we will not calculate the multiple of the removed composite number.            
+
+Another question is why I use dynamic scheduling:            
+	We can imagine that under a given size, the multiple of 2 must be more than other numbers. The smaller the number is, the more the multiple will be have. If  "#pragma omp parallel for" adopts a static mode, it will undoubtedly lead to a large difference in the amount of computation between threads.           
+
+But there are also problems in my implementation:            
+	If there are four threads, the dynamic scheduling method is adopted. Thread 0 is allocated  multiple of 2, thread 1 is allocated  multiple of 3, thread 2 is allocated  multiple of 4, and thread 3 is allocated  multiple of 5. 4 is a multiple of 2. Generally speaking, 4 should not be calculated  it's multiple.
+
+In my test:
+	Fisrst: 0.015766	Second: 0.013683 	    Third: 0.013667	      Fourth: 0.015395     Fifth: 0.012959 

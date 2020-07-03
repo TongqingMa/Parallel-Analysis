@@ -1,0 +1,22 @@
+
+First：how to compile it:
+		1. cd assignment5;
+		2. makdir build
+		3. cd build
+		4. cmake ..
+		5. make
+		6. ./HW5
+
+The key of this operation is the application of shared memory. 
+The basic steps are as follows:
+	1. Put the input data into coarse bins;
+	2. Use each thread block to compute a local histogram for the data that falls into a single coarse bin;
+	3. Concatenate each of the coarse histogram together.
+The local histogram will use shared memory to store it.
+
+  The Work Complexity is O(N), 
+  The Span Complexity is O(1).
+	The N is the number of the elements.	
+
+
+

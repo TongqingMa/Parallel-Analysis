@@ -1,0 +1,13 @@
+Now suppose you want to compute a post -order numbering of the nodes, The classic procedure is recursive.
+you want to assign each of the nodes of the tree a unique value.
+You maintain the last assigned number, I've shown that here as the variable V.
+But before you do all that, you'll visit and number all of the descendants.
+Each recursive descent returns the last assigned value
+The first part of the algorithm will descend to, say, leaf number four.
+It looks like you have to number all of the nodes' children before you can number a node itself.
+Anyway, I hope the grading goblin accepted valid alternatives and rewarded you for thinking outside the left to right, right to left box
+
+Now let's suppose that this point the list has the right size, Then we can run list scan on it,  The temporary ranks or the ranks to scan, so running the scan gives you the following result.
+Now let's compare these compute ranks to what they're supposed to be based on the original lists.
+Neat. Now what about these other ranks?
+You basically need to run the process that you just ran to contract the list in reverse
