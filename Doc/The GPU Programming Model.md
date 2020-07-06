@@ -58,7 +58,7 @@
 3. Threads from different or same blocks have their own copy of local variables in local memory.
 
 + 1. CUDA is hierarchy of computation : threads thread blocks kernels
-+ 2. with the corresponding hierarchy of memory spaces: local shared and global and synchronization primitives : sync threads barriers and implicit barrier in between 2 synchronous kernels.
++ 2. with the corresponding hierarchy of memory spaces (local shared and global  even texture,that is not clear) and synchronization primitives ( sync threads barriers and implicit barrier in between 2 synchronous kernels).
 
 ## Writing Efficient Programs
 1. Maximize Arithmetic intensity
